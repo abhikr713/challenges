@@ -25,7 +25,7 @@ function main(dataLines) {
 
     /**Find paths */
     flatMat.forEach(valObj => {
-        if(!visited[valObj.i][valObj.j] && valObj.v > resultPathProps.dropHeight) {
+        if(!visited[valObj.i][valObj.j] && valObj.v > resultPathProps.dropHeight && valObj.v > resultPathProps.pathLength) {
             const res = findPathFrom(mat, [{i: valObj.i, j :valObj.j}]);
             maxPath = findMaxPath(maxPath, res, mat);
             resultPathProps = calcPathLengthAndHeight(maxPath, mat);
